@@ -20,6 +20,7 @@ export default{
     <div class="row" id="movie">
         <div class="col" v-for="element in store.movieList">
             <AppCard 
+                :img="element.poster_path"
                 :titolo="element.title"
                 :titoloOriginale="element.original_title"
                 :lingua="element.original_language"
@@ -31,6 +32,7 @@ export default{
     <div class="row" id="tv">
         <div class="col" v-for="element in store.tvList">
             <AppCard 
+                :img="element.poster_path"
                 :titolo="element.name"
                 :titoloOriginale="element.original_name"
                 :lingua="element.original_language"

@@ -16,19 +16,26 @@ export default {
         }
     },
     methods: {
+        getMovie() {
+            const tmp = this.store.cerca.replace(" ", "+");
+            const link = this.store.configApi.linkMovie + this.store.configApi.key + this.store.configApi.query + tmp;
+            axios.get(link).then((response) => {
+                this.store.movieList = response.data.results;
+            }
+            );
+        },
+        getTv() {
+            const tmp = this.store.cerca.replace(" ", "+");
+            const linkTv = this.store.configApi.linkTv + this.store.configApi.key + this.store.configApi.query + tmp;
+            axios.get(linkTv).then((response) => {
+                this.store.tvList = response.data.results;
+            }
+            );
+        },
         cerca() {
             if (this.store.cerca.trim() !== '') {
-                const tmp = this.store.cerca.replace(" ", "+");
-                const link = this.store.configApi.linkMovie + this.store.configApi.key + this.store.configApi.query + tmp;
-                axios.get(link).then((response) => {
-                    this.store.movieList = response.data.results;
-                }
-                );
-                const linkTv = this.store.configApi.linkTv + this.store.configApi.key + this.store.configApi.query + tmp;
-                axios.get(linkTv).then((response) => {
-                    this.store.tvList = response.data.results;
-                }
-                );
+                this.getMovie();
+                this.getTv();
             }
         }
     }
