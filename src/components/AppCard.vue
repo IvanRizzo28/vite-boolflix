@@ -53,7 +53,9 @@ export default {
                 <!--    <font-awesome-icon icon="fa-regular fa-star" />
                     <font-awesome-icon icon="fa-solid fa-star" />
                     <font-awesome-icon icon="fa-brands fa-twitter" /> -->
-                <span>Voto:</span> {{ getVoto }}
+                <span>Voto:</span>
+                <font-awesome-icon icon="fa-solid fa-star" v-for="n in getVoto" class="star"/>
+                <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5-getVoto" class="star"/>
             </div>
             <div>
                 <img :src="getFlag">
@@ -100,6 +102,11 @@ export default {
             font-size: 1.0625rem;
         }
     }
+}
+
+.star{
+    color: yellow;
+    margin: 0 2px;
 }
 
 .copertina {
