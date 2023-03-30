@@ -21,14 +21,14 @@ export default {
         <div class="row" id="movie">
             <div class="col" v-for="element in store.movieList">
                 <AppCard :img="element.poster_path" :titolo="element.title" :titoloOriginale="element.original_title"
-                    :lingua="element.original_language" :voto="element.vote_average" />
+                    :lingua="element.original_language" :voto="element.vote_average" :overview="element.overview"/>
             </div>
         </div>
         <h2 v-show="this.store.tvList.length > 0">Serie Tv</h2>
         <div class="row" id="tv">
             <div class="col" v-for="element in store.tvList">
                 <AppCard :img="element.poster_path" :titolo="element.name" :titoloOriginale="element.original_name"
-                    :lingua="element.original_language" :voto="element.vote_average" />
+                    :lingua="element.original_language" :voto="element.vote_average" :overview="element.overview" />
             </div>
         </div>
     </div>
@@ -36,4 +36,10 @@ export default {
 
 <style scoped lang="scss">
 @use '../assets/stili/container.scss' as *;
+
+h2{
+    font-size: 1.5625rem;
+    color: #fff;
+    text-transform: uppercase;
+}
 </style>
