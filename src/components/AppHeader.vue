@@ -22,4 +22,5 @@ export default{
 </template>
 
 <style scoped lang="scss">
+@use '../assets/stili/container.scss' as *;
 </style>

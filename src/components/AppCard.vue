@@ -42,10 +42,10 @@ export default{
             <img :src="getImg" :alt="titolo">
         </div>
         <div class="content">
-            <div v-show="titolo !== titoloOriginale">
+            <div>
                 Titolo: {{ titolo }}
             </div>
-            <div>
+            <div v-show="titolo !== titoloOriginale">
                 Titolo originale: {{ titoloOriginale }}
             </div>
             <div>
@@ -62,4 +62,13 @@ export default{
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card{
+    height: 100%;
+}
+.copertina img{
+    width: 100%;
+    aspect-ratio: 1/1.5;
+    object-fit: cover;
+}
+</style>
