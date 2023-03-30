@@ -17,7 +17,7 @@ export default {
             <h1 class="logo">LOGO</h1>
             <div>
                 <input type="text" placeholder="Cerca" v-model="store.cerca">
-                <button @click="$emit('cerca')">Cerca</button>
+                <button @click="$emit('cerca')"><font-awesome-icon icon="fa-solid fa-magnifying-glass" /></button>
             </div>
         </div>
     </header>
@@ -55,5 +55,6 @@ button{
     border: none;
     background-color: crimson;
     color: #fff;
+    cursor: pointer;
 }
 </style>
