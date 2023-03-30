@@ -25,10 +25,12 @@ export default{
             }
         },
         getImg(){
+            if (this.img === null) return "https://placehold.jp/30/dd6699/ffffff/342x513.png?text=Immagine+non+trovata"; /* "https://placehold.co/342x513" */
             return this.imgLink + this.img;
         },
         getVoto(){
-            return Math.ceil(this.voto);
+            let tmp= Math.ceil(this.voto/2);
+            return tmp;
         }
     }
 }
@@ -40,7 +42,7 @@ export default{
             <img :src="getImg" :alt="titolo">
         </div>
         <div class="content">
-            <div>
+            <div v-show="titolo !== titoloOriginale">
                 Titolo: {{ titolo }}
             </div>
             <div>
@@ -51,6 +53,9 @@ export default{
                 Lingua: {{ lingua }}
             </div>
             <div>
+            <!--    <font-awesome-icon icon="fa-regular fa-star" />
+                <font-awesome-icon icon="fa-solid fa-star" />
+                <font-awesome-icon icon="fa-brands fa-twitter" /> -->
                 Voto: {{ getVoto }}
             </div>
         </div>

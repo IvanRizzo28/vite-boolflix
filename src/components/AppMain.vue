@@ -16,7 +16,7 @@ export default{
 </script>
 
 <template>
-    <h2>Film</h2>
+    <h2 v-show="this.store.movieList.length > 0">Film</h2>
     <div class="row" id="movie">
         <div class="col" v-for="element in store.movieList">
             <AppCard 
@@ -28,7 +28,7 @@ export default{
             />
         </div>
     </div>
-    <h2>Serie Tv</h2>
+    <h2 v-show="this.store.tvList.length > 0">Serie Tv</h2>
     <div class="row" id="tv">
         <div class="col" v-for="element in store.tvList">
             <AppCard 

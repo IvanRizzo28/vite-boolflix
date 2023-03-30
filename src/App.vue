@@ -36,6 +36,7 @@ export default {
             if (this.store.cerca.trim() !== '') {
                 this.getMovie();
                 this.getTv();
+                this.store.cerca='';
             }
         }
     }
