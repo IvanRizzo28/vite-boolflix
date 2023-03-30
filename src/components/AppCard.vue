@@ -7,6 +7,16 @@ export default{
         titoloOriginale: String,
         lingua: String,
         voto: Number
+    },
+    data(){
+        return {
+            flagLink: 'https://www.countryflagicons.com/FLAT/24/'
+        }
+    },
+    computed:{
+        getFlag(){
+            return this.flagLink + this.lingua.toLocaleUpperCase() + ".png";
+        }
     }
 }
 </script>
@@ -24,6 +34,7 @@ export default{
                 Titolo originale: {{ titoloOriginale }}
             </div>
             <div>
+                <img :src="getFlag">
                 Lingua: {{ lingua }}
             </div>
             <div>
