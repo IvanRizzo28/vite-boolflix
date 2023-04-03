@@ -13,9 +13,13 @@ export default {
         setMenuFilter() {
             this.menuFilter = !this.menuFilter;
         },
-        applicaFiltri(){
+        reset(){
             this.menuFilter=false;
-            console.log(this.store.filter.filterMovie,this.store.filter.filterTv,this.store.filter.movie,this.store.filter.tv);
+            this.store.filter.filterMovie=-1;
+            this.store.filter.filterTv=-1;
+            this.store.filter.movie=false;
+            this.store.filter.tv=false;
+            //console.log(this.store.filter.filterMovie,this.store.filter.filterTv,this.store.filter.movie,this.store.filter.tv);
         }
     }
 }
@@ -52,7 +56,7 @@ export default {
                 <label for="film">film</label>
                 <input type="checkbox" name="Film" id="film" v-model="store.filter.movie">
             </div>
-            <button @click="applicaFiltri">Applica</button>
+            <button @click="reset">Reset</button>
         </div>
     </header>
 </template>
